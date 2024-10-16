@@ -39,6 +39,13 @@ if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/releases/* ]]; then
     fi
 fi
 
+if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/how-to/* ]]; then
+    NAME="${P#${ROUTE_PATH}/how-to/}"
+    if [[ -f "how-to/$NAME.html" ]]; then
+        meta_out headers="$(jo "content-type"="text/html")"
+        exec jo content="how-to/$NAME.html" | minijinja-cli -f json html/main.html -
+    fi
+fi
 
 meta_out status=404 headers="$(jo "content-type"="text/html")"
 echo "Not Found:" $METHOD $P
