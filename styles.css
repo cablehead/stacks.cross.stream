@@ -36,6 +36,7 @@ h4 {
 }
 
 img,
+video,
 picture {
   max-width: 100%;
   display: block;
@@ -148,6 +149,7 @@ html[data-theme="dark"] {
 
 iframe,
 img,
+video,
 input,
 select,
 textarea {

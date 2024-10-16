@@ -31,14 +31,6 @@ if [[ "$METHOD" == "GET" && "$P" == "${ROUTE_PATH}/styles.css" ]]; then
     exec cat styles.css
 fi
 
-if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/static/* ]]; then
-    NAME="${P#${ROUTE_PATH}/static/}"
-    if [[ -f "static/$NAME" ]]; then
-        meta_out headers="$(jo "content-type"="image/png")"
-        exec cat "static/$NAME"
-    fi
-fi
-
 if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/quick/* ]]; then
     NAME="${P#${ROUTE_PATH}/quick/}"
     if [[ -f "quick/$NAME" ]]; then
