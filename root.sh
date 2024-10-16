@@ -31,11 +31,11 @@ if [[ "$METHOD" == "GET" && "$P" == "${ROUTE_PATH}/styles.css" ]]; then
     exec cat styles.css
 fi
 
-if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/quick/* ]]; then
-    NAME="${P#${ROUTE_PATH}/quick/}"
-    if [[ -f "quick/$NAME" ]]; then
+if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/releases/* ]]; then
+    NAME="${P#${ROUTE_PATH}/releases/}"
+    if [[ -f "releases/$NAME.html" ]]; then
         meta_out headers="$(jo "content-type"="text/html")"
-        exec jo stack_id="$NAME" | minijinja-cli --safe-path ./quick --safe-path . --safe-path ./quick -f json quick.html -
+        exec jo content="releases/$NAME.html" | minijinja-cli -f json html/main.html -
     fi
 fi
 
