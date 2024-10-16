@@ -16,6 +16,7 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.6em;
+  font-size: 1.1em;
 }
 
 h1,
@@ -80,10 +81,23 @@ a {
 
 pre,
 code {
+  font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+}
+
+code {
+  background-color: var(--shadow-color);
+  color: var(--background-color);
+  padding: 0.05em 0.3em;
+  border-radius: 0.3em;
+}
+
+.preview pre {
   background-color: #333; /* Darker gray for code blocks */
   color: #e0e0e0; /* Light gray text for code */
-  padding: 10px;
-  border-radius: 4px;
+  padding: 1em;
+  border-radius: 0.5em;
   overflow-x: auto;
 }
 
