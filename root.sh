@@ -23,7 +23,7 @@ P=${P%/}
 
 if [[ "$METHOD" == "GET" && "$P" == "${ROUTE_PATH}" ]]; then
     meta_out headers="$(jo "content-type"="text/html")"
-    exec jo content="index.html" | minijinja-cli -f json html/main.html -
+    exec jo content="index.html" meta=:index.json | minijinja-cli -f json html/main.html -
 fi
 
 if [[ "$METHOD" == "GET" && "$P" == "${ROUTE_PATH}/styles.css" ]]; then
@@ -35,7 +35,7 @@ if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/releases/* ]]; then
     NAME="${P#${ROUTE_PATH}/releases/}"
     if [[ -f "releases/$NAME.html" ]]; then
         meta_out headers="$(jo "content-type"="text/html")"
-        exec jo content="releases/$NAME.html" | minijinja-cli -f json html/main.html -
+        exec jo content="releases/$NAME.html" meta=":releases/$NAME.json" | minijinja-cli -f json html/main.html -
     fi
 fi
 
@@ -43,7 +43,7 @@ if [[ "$METHOD" == "GET" && "$P" == ${ROUTE_PATH}/how-to/* ]]; then
     NAME="${P#${ROUTE_PATH}/how-to/}"
     if [[ -f "how-to/$NAME.html" ]]; then
         meta_out headers="$(jo "content-type"="text/html")"
-        exec jo content="how-to/$NAME.html" | minijinja-cli -f json html/main.html -
+        exec jo content="how-to/$NAME.html" meta=":how-to/$NAME.json" | minijinja-cli -f json html/main.html -
     fi
 fi
 
