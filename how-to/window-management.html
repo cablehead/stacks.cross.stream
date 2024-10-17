@@ -3,25 +3,19 @@
 <div class="preview markdown"><p>In the spirit of <a href="https://gist.github.com/cablehead/efbe67fb90b8dde21a7c885f91f3f75d">small, focused tools</a>, Stacks doesn't include built-in window management. The idea is to combine it with a great dedicated window manager.</p>
 <p>Use Stacks to manage your clipboard, notes, and snippets, and then use a specialized tool to handle your windows. As <a href="https://x.com/rosano">@rosano</a> writes: <a href="https://utopia.rosano.ca/interoperable-visions/">&quot;Every interoperable app becomes a super-app.&quot;</a></p>
 </div>
-<div class="preview markdown"><p>In this sequence, <a href="https://stacks.cross.stream">Stacks</a> is used to load the clipboard with some HTML. <a href="https://github.com/printfn/bp"><code>bp</code></a> sends the content to the <a href="https://github.com/sharkdp/bat"><code>bat</code></a> CLI tool, and then to <a href="https://www.nushell.sh">Nushell</a>'s save command to start a quick one-pager. The <code>index.html</code> file is opened in Safari. <a href="https://www.raycast.com">Raycast</a> moves Safari to the right half of the screen, and <a href="https://github.com/ghostty-org/ghostty">Ghostty</a> to the left. <a href="https://folivora.ai/bettersnaptool">BetterSnapTool</a> is used to reposition and resize Stacks, and Stacks is again used to load some CSS onto the clipboard. The <code>index.html</code> is then opened in <a href="https://neovim.io"><code>neovim</code></a> to paste in the CSS, and the one-pager is refreshed.</p>
+<video
+  autoplay
+  loop
+  muted
+  playsinline
+>
+  <source src="/flow-75.mp4" type="video/mp4" />
+</video>
+<div class="preview markdown"><blockquote>
+<p><small>In this sequence, <a href="https://stacks.cross.stream">Stacks</a> is used to load the clipboard with some HTML. <a href="https://github.com/printfn/bp"><code>bp</code></a> sends the content to the <a href="https://github.com/sharkdp/bat"><code>bat</code></a> CLI tool, and then to <a href="https://www.nushell.sh">Nushell</a>'s save command to start a quick one-pager. The <code>index.html</code> file is opened in Safari. <a href="https://www.raycast.com">Raycast</a> moves Safari to the right half of the screen, and <a href="https://github.com/ghostty-org/ghostty">Ghostty</a> to the left. <a href="https://folivora.ai/bettersnaptool">BetterSnapTool</a> is used to reposition and resize Stacks, and Stacks is again used to load some CSS onto the clipboard. The <code>index.html</code> is then opened in <a href="https://neovim.io"><code>neovim</code></a> to paste in the CSS, and the one-pager is refreshed.</small></p>
+</blockquote>
 </div>
-<div style="margin: 3em 0;">
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    style="
-      border-radius: 5px;
-      box-shadow: 0 0 20px var(--shadow-color);
-      margin-top: 3ch;
-      margin-bottom: 3ch;
-    "
-  >
-    <source src="/flow-75.mp4" type="video/mp4" />
-  </video>
-</div>
-<div class="preview markdown"><p>Some candidates for macOS: <a href="https://folivora.ai/bettersnaptool">BetterSnapTool</a>, <a href="https://rectangleapp.com">Rectangle</a>, <a href="https://www.raycast.com">Raycast</a>, <a href="https://highlyopinionated.co/swish/">Swish</a>, <a href="https://github.com/ianyh/Amethyst">Amethyst</a>, and <a href="#xs-more">more ...</a></p>
+<div class="preview markdown"><p>For window management, some candidate tools for macOS include: <a href="https://folivora.ai/bettersnaptool">BetterSnapTool</a>, <a href="https://rectangleapp.com">Rectangle</a>, <a href="https://www.raycast.com">Raycast</a>, <a href="https://highlyopinionated.co/swish/">Swish</a>, <a href="https://github.com/ianyh/Amethyst">Amethyst</a>, and <a href="#xs-more">more ...</a></p>
 <p>In the world of window management, there are pretty much three types of tools:</p>
 <ol>
 <li>
@@ -38,22 +32,14 @@
 <div class="preview markdown"><h3><a href="#bettersnaptool" aria-hidden="true" class="anchor" id="xs-bettersnaptool"></a><a href="https://folivora.ai/bettersnaptool">BetterSnapTool</a></h3>
 <p>I’ve been using <a href="https://folivora.ai/bettersnaptool">BetterSnapTool</a> since 2018. For $1.99, it offers both fixed positioning (type 1) and hotkey-based freeform resizing/moving (type 2). In practice, I find myself mostly using type 2 for its flexibility.</p>
 </div>
-<div style="margin: 3em 0;">
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    style="
-      border-radius: 5px;
-      box-shadow: 0 0 20px var(--shadow-color);
-      margin-top: 3ch;
-      margin-bottom: 3ch;
-    "
-  >
-    <source src="/better-snap-tool-75.mp4" type="video/mp4" />
-  </video>
-</div>
+<video
+  autoplay
+  loop
+  muted
+  playsinline
+>
+  <source src="/better-snap-tool-75.mp4" type="video/mp4" />
+</video>
 <div class="preview markdown"><h3><a href="#raycast" aria-hidden="true" class="anchor" id="xs-raycast"></a><a href="https://www.raycast.com">Raycast</a></h3>
 <p><a href="https://www.raycast.com">Raycast</a> is a free option that provides type 1 functionality. I particularly like its &quot;almost maximize&quot; action, which is a nice balance between full-screen and maximizing. Since Raycast is  a Spotlight-like launcher, you can activate window commands by typing the action name, which means there’s not as much need to memorize keyboard shortcuts.</p>
 </div>
@@ -65,23 +51,15 @@
 </blockquote>
 <p>The author, <a href="https://github.com/rxhanson">Ryan Hanson</a>, has a suite of exquisite macOS utilities: <a href="https://ryanhanson.dev">https://ryanhanson.dev</a></p>
 </div>
-<div style="margin: 3em 0;">
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    style="
-      border-radius: 5px;
-      box-shadow: 0 0 20px var(--shadow-color);
-      margin-top: 3ch;
-      margin-bottom: 3ch;
-    "
-  >
-    <source src="/rectangle-75.mp4" type="video/mp4" />
-  </video>
-</div>
+<video
+  autoplay
+  loop
+  muted
+  playsinline
+>
+  <source src="/rectangle-75.mp4" type="video/mp4" />
+</video>
 <div class="preview markdown"><h3><a href="#more" aria-hidden="true" class="anchor" id="xs-more"></a>More</h3>
 <p>Some additional options I've not had a chance to try. On the window tiling front, there's the open-source <a href="https://github.com/ianyh/Amethyst">Amethyst</a>, which looks really cool. Stacks user <a href="https://github.com/VKondakoff">@VKondakoff</a> has had success with <a href="https://highlyopinionated.co/swish/">Swish</a>.</p>
-<p>How about you? Do you have a favorite window manager?</p>
+<p>How about you? Do you have a favorite window manager? Swing by our <a href="https://discord.gg/fDEcqjKHpv">discord</a> to chat!</p>
 </div>
