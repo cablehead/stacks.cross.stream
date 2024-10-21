@@ -273,33 +273,6 @@ blockquote {
   font-style: italic;
 }
 
-.image-xkcd {
-  margin: 0 auto;
-  max-height: 300px;
-}
-
-.epistemic-disclosure {
-  position: relative;
-  cursor: pointer;
-  border-bottom: 1px dotted;
-  display: inline-block;
-}
-
-.epistemic-disclosure:hover::before {
-  color: var(--background-color);
-  background-color: var(--paragraph-color);
-  content: attr(data-tooltip);
-  position: absolute;
-  top: 60%;
-  left: 40px;
-  padding: 2px 5px;
-  border-radius: 5px;
-  font-size: 0.9em;
-  white-space: nowrap;
-  z-index: 1;
-}
-
-/* plantings.css */
 em.status {
   font-size: 0.8rem;
   border-radius: 0.4em;
@@ -307,26 +280,4 @@ em.status {
   padding: 0.1em 0.4em;
   border: 1px dotted var(--shadow-color);
   white-space: nowrap;
-}
-
-.planting {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-
-.sub-planting {
-  display: flex;
-  align-items: stretch;
-  gap: 1em;
-}
-
-.sub-planting > :nth-child(1) {
-  align-self: stretch;
-  flex: 2;
-}
-
-.sub-planting > :nth-child(2) {
-  align-self: stretch;
-  flex: 3;
 }
