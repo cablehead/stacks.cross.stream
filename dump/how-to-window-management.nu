@@ -11,4 +11,6 @@ stacks 03CNQXHTMD078JM5Y56KOWD0V --meta |
 
         }
         stacks $x --html
-    } | str join "\n" |  save -f ./how-to/window-management.html
+    } |
+		str join "\n" |
+		save -f ./how-to/window-management.html

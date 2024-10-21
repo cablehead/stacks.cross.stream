@@ -1,3 +1,10 @@
-<video controls loop width="2520" height="1572" muted playsinline>
-  <source src="{{ video | safe }}" type="video/mp4" />
-</video>
+<div>
+  <mux-player
+    playback-id="{{ video }}"
+    metadata-viewer-user-id="cross-stream-01"
+    thumbnail-time="0"
+    muted="true"
+    loop
+    style="aspect-ratio: 16/10"
+  ></mux-player>
+</div>

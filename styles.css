@@ -37,7 +37,6 @@ h4 {
 }
 
 img,
-video,
 picture {
   height: auto;
   max-width: 100%;
@@ -86,19 +85,8 @@ code {
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   font-size: 0.95em;
-	font-style: normal;
-	vertical-align: middle;
-}
-
-video {
-  border-radius: 5px;
-  box-shadow: 0 0 20px var(--shadow-color);
-  margin: 2em 0 3em;
-}
-
-/* remove margin between a video and a subsequent blockquote that's inside a div */
-video + div blockquote {
-	margin-top: -1.5em;
+  font-style: normal;
+  vertical-align: middle;
 }
 
 code {
@@ -178,7 +166,6 @@ html[data-theme="dark"] {
 
 iframe,
 img,
-video,
 input,
 select,
 textarea {
@@ -281,3 +268,33 @@ em.status {
   border: 1px dotted var(--shadow-color);
   white-space: nowrap;
 }
+
+/* mux player */
+div mux-player {
+  border-radius: 5px;
+  box-shadow: 0 0 20px var(--shadow-color);
+  overflow: hidden;
+  margin-top: 1em;
+}
+
+mux-player {
+  --rendition-selectmenu: none;
+}
+
+/*
+mux-player {
+  aspect-ratio: 16 / 10;
+}
+*/
+
+mux-player::part(airplay),
+mux-player::part(cast),
+mux-player::part(volume),
+mux-player::part(playback-rate),
+mux-player::part(mute),
+mux-player::part(seek-backward),
+mux-player::part(seek-forward),
+mux-player::part(captions) {
+  display: none;
+}
+/* end mux player */
