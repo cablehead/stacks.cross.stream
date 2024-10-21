@@ -39,6 +39,7 @@ h4 {
 img,
 video,
 picture {
+  height: auto;
   max-width: 100%;
   display: block;
 }
