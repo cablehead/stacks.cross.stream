@@ -244,6 +244,16 @@ p {
   margin-bottom: 1.6em;
 }
 
+hr {
+    margin-top: 5em;
+    margin-bottom: 4em;
+    width: 50%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, var(--background-color), var(--shadow-color));
+
+    }
+
 ul {
   padding-left: 3ch;
   margin-top: 0em;
@@ -289,12 +299,15 @@ mux-player {
 
 mux-player::part(airplay),
 mux-player::part(cast),
-mux-player::part(volume),
 mux-player::part(playback-rate),
-mux-player::part(mute),
 mux-player::part(seek-backward),
 mux-player::part(seek-forward),
 mux-player::part(captions) {
+  display: none;
+}
+
+mux-player.no-audio::part(volume),
+mux-player.no-audio::part(mute) {
   display: none;
 }
 /* end mux player */
