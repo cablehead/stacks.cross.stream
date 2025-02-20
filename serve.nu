@@ -17,6 +17,10 @@ def do_404 [req: record] {
       .static "." $req.path
     }
 
+    {method: "GET" , path: "/icon.ico"} => {
+      .static "." "icon.ico"
+    }
+
     _ => (do_404 $req)
   }
 }
