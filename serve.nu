@@ -8,6 +8,15 @@ def do_404 [req: record] {
     {method: "GET" , path: "/"} => {
       {content: "index.html" meta: (open index.json)} | to json -r | minijinja-cli -f json html/main.html -
     }
+
+    {method: "GET"} if ($req.path | str starts-with "/css/") => {
+      .static "." $req.path
+    }
+
+    {method: "GET"} if ($req.path | str starts-with "/static/") => {
+      .static "." $req.path
+    }
+
     _ => (do_404 $req)
   }
 }
