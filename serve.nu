@@ -3,6 +3,16 @@ def do_404 [req: record] {
   $"Not Found: ($req.method) ($req.path)"
 }
 
+def do_page [prefix: string req: record] {
+  let name = $req.path | path basename
+  let html = $prefix + $name + ".html"
+  if ($html | path exists) {
+    {content: $html meta: (open ($prefix + $name + ".json"))} | to json -r | minijinja-cli -f json html/main.html -
+  } else {
+    do_404 $req
+  }
+}
+
 {|req|
   match $req {
     {method: "GET" , path: "/"} => {
@@ -10,13 +20,11 @@ def do_404 [req: record] {
     }
 
     {method: "GET"} if ($req.path | str starts-with "/releases/") => {
-      let name = $req.path | path basename
-      let html = "./releases/" + $name + ".html"
-      if ($html | path exists) {
-        {content: $html meta: (open ("./releases/" + $name + ".json"))} | to json -r | minijinja-cli -f json html/main.html -
-      } else {
-        do_404 $req
-      }
+      do_page "./releases/" $req
+    }
+
+    {method: "GET"} if ($req.path | str starts-with "/how-to/") => {
+      do_page "./how-to/" $req
     }
 
     {method: "GET"} if ($req.path | str starts-with "/css/") => {
