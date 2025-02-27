@@ -35,6 +35,10 @@ def do_page [prefix: string req: record] {
       .static (pwd) $req.path
     }
 
+    {method: "GET"} if ($req.path | str starts-with "/releases/") => {
+      .static (pwd) $req.path
+    }
+
     {method: "GET" , path: "/icon.ico"} => {
       .static (pwd) "icon.ico"
     }
